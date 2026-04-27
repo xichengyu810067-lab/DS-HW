@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>陣列 vs 鏈結串列</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home" class="home-view" aria-labelledby="game-title">
+        <div class="home-copy">
+          <p class="eyebrow">資料結構互動遊戲</p>
+          <h1 id="game-title">陣列 vs 鏈結串列</h1>
+          <p class="intro">
+            透過拖拉、修改與搬移方塊，實際體驗 Array 與 Linked List
+            在新增、更改、刪除、插入資料時的底層差異。
+          </p>
+        </div>
+
+        <div class="control-panel" aria-label="開局設定">
+          <label class="field-label" for="player-name">玩家名稱</label>
+          <input id="player-name" class="text-input" type="text" placeholder="請輸入名稱" autocomplete="name" />
+
+          <div class="rules">
+            <h2>規則</h2>
+            <p>每完成一個正確階段可獲得分數，最高 100 分。格子內容需符合系統指派的資料狀態。</p>
+          </div>
+
+          <div class="mode-actions">
+            <button id="start-array" class="primary-button" type="button">陣列模式</button>
+            <button id="start-list" class="secondary-button" type="button">鏈結串列模式</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="game" class="game-view hidden" aria-live="polite">
+        <header class="game-header">
+          <div>
+            <p id="player-line" class="eyebrow">玩家</p>
+            <h1 id="mode-title">遊戲模式</h1>
+          </div>
+          <div class="score-box">
+            <span>分數</span>
+            <strong id="score">0</strong>
+          </div>
+        </header>
+
+        <section class="task-band">
+          <div>
+            <p id="phase-label" class="phase-label">任務</p>
+            <h2 id="task-title">準備中</h2>
+            <p id="task-text">請依照指示操作。</p>
+          </div>
+          <div class="task-actions">
+            <button id="check-task" class="primary-button" type="button">檢查</button>
+            <button id="hint-task" class="secondary-button" type="button">提示</button>
+            <button id="prev-step" class="ghost-button" type="button">上一步</button>
+            <button id="reset-mode" class="ghost-button" type="button">重新開始</button>
+            <button id="back-home" class="ghost-button" type="button">回首頁</button>
+          </div>
+        </section>
+
+        <section id="legend" class="legend" aria-label="圖例"></section>
+        <section id="grid-wrap" class="grid-wrap"></section>
+        <p id="message" class="message" role="status"></p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
